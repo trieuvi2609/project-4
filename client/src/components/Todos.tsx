@@ -174,6 +174,7 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
             actionPosition="left"
             placeholder="To change the world..."
             onChange={this.handleNameChange}
+            style={{background: 'red'}}
           />
         </Grid.Column>
         <Grid.Column width={16}>
@@ -210,8 +211,7 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
           <Table.Row>
             <Table.HeaderCell textAlign="center">Completed</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Image</Table.HeaderCell>
-            <Table.HeaderCell>Todo Name</Table.HeaderCell>
-            <Table.HeaderCell textAlign="center">Due Date</Table.HeaderCell>
+            <Table.HeaderCell>Name</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Edit</Table.HeaderCell>
             <Table.HeaderCell textAlign="center">Delete</Table.HeaderCell>
           </Table.Row>
@@ -237,7 +237,6 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
                     />
                   </Table.Cell>
                   <Table.Cell>{todo.name}</Table.Cell>
-                  <Table.Cell textAlign="center">{todo.dueDate}</Table.Cell>
                   <Table.Cell textAlign="center">
                     <Button
                       icon
@@ -277,10 +276,6 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
                 pageItem={null}
                 onPageChange={this.onTodoPagination}
               />
-            </Table.HeaderCell>
-            <Table.HeaderCell textAlign="center">
-              <p>Total todos: {numberOfTodos}</p>
-              <p>Total pages: {Math.round(numberOfTodos / limitPagination)}</p>
             </Table.HeaderCell>
           </Table.Row>
         </Table.Footer>
